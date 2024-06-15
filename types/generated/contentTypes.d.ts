@@ -420,6 +420,11 @@ export interface ApiProductProduct extends Schema.CollectionType {
     quantityPurchase: Attribute.Integer;
     action: Attribute.String;
     slug: Attribute.String;
+    category: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'api::category.category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
